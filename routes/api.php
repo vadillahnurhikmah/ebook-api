@@ -9,6 +9,7 @@ use GuzzleHttp\Promise\Create;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,12 +35,12 @@ Route::delete('/book/{id}', [BookController::class, 'destroy'])->middleware('aut
 //Route::resource('book', BookController::class)->except('edit', 'create')->middleware('auth:sanctum');
 
 
-// Route::get('/author', [AuthorController::class, 'index']);
-// Route::post('/author', [AuthorController::class, 'store']);
-// Route::get('/author/{id}', [AuthorController::class, 'show']);
-// Route::put('/author/{id}', [AuthorController::class, 'update']);
-// Route::delete('/author/{id}', [AuthorController::class, 'destroy']);
-Route::resource('author', "\App\Http\Controllers\AuthorController")->except('edit', 'create')->middleware('auth:sanctum');
+//Route::get('/author', [AuthorController::class, 'index'])->middleware('auth:sanctum');
+//Route::post('/author', [AuthorController::class, 'store'])->middleware('auth:sanctum');
+//Route::get('/author/{id}', [AuthorController::class, 'show'])->middleware('auth:sanctum');
+//Route::put('/author/{id}', [AuthorController::class, 'update'])->middleware('auth:sanctum');
+//Route::delete('/author/{id}', [AuthorController::class, 'destroy'])->middleware('auth:sanctum');
+Route::resource('authors', "\App\Http\Controllers\AuthorController")->except('edit', 'create')->middleware('auth:sanctum');
  
 
 Route::post('/register', [AuthController::class, 'register']);

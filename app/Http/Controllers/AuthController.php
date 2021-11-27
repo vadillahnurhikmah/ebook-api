@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -29,11 +28,12 @@ $validatedData = $request->validate([
 $token = $user->createToken('auth_token')->plainTextToken;
 
 return response()->json([
-              'access_token' => $token,
-                   'token_type' => 'Bearer',
+    'access_token' => $token,
+    'token_type' => 'Bearer',
 ]);
 }
-    public function login(Request $request)
+
+public function login(Request $request)
 {
 if (!Auth::attempt($request->only('email', 'password'))) {
 return response()->json([
@@ -58,7 +58,7 @@ public function me(Request $request)
 return $request->user();
 }
 
-    //public function me(){
+   //public function me(){
       //  return [
            // "NIS" => 3103119189,
            // "Nama" => "Vadillah Nur Hikmah",
